@@ -11,6 +11,12 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)](https://fastapi.tiangolo.com/)
 [![Vue 3](https://img.shields.io/badge/Vue-3.0+-brightgreen.svg)](https://vuejs.org/)
 
+### 🎥 Demo Video
+
+https://github.com/user-attachments/assets/demo.mov
+
+*Watch VideoGen in action: From text prompt to final video in minutes*
+
 </div>
 
 ---
