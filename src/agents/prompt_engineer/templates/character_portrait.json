@@ -1,0 +1,104 @@
+{
+    "template_id": "character_portrait",
+    "name": "角色肖像",
+    "category": "CHARACTER",
+    "description": "用于角色特写和肖像镜头的模板",
+    "base_prompt": "{character_signature}, {character_face}, {character_hair}, {character_clothing}, {expression}, {mood} lighting, portrait shot, {shot_type}",
+    "variables": [
+        {
+            "name": "character_signature",
+            "type": "string",
+            "required": true,
+            "description": "角色标志性特征（从 DNA Bank 获取）",
+            "example": "silver star-shaped earrings, red checkered scarf"
+        },
+        {
+            "name": "character_face",
+            "type": "string",
+            "required": true,
+            "description": "面部特征描述",
+            "example": "16-year-old girl, oval face, bright blue eyes, small delicate nose"
+        },
+        {
+            "name": "character_hair",
+            "type": "string",
+            "required": true,
+            "description": "发型发色",
+            "example": "jet black long straight hair reaching waist, red ribbon bow"
+        },
+        {
+            "name": "character_clothing",
+            "type": "string",
+            "required": true,
+            "description": "服装描述",
+            "example": "white cotton blouse with Peter Pan collar, navy blue pleated skirt"
+        },
+        {
+            "name": "expression",
+            "type": "string",
+            "required": false,
+            "default": "neutral expression",
+            "description": "面部表情",
+            "example": "bright smile showing teeth, gentle caring expression"
+        },
+        {
+            "name": "mood",
+            "type": "string",
+            "required": false,
+            "default": "soft",
+            "description": "情绪氛围",
+            "example": "warm, nostalgic, peaceful"
+        },
+        {
+            "name": "shot_type",
+            "type": "string",
+            "required": false,
+            "default": "medium shot",
+            "description": "镜头类型",
+            "example": "close-up, medium close-up, medium shot"
+        }
+    ],
+    "variations": [
+        "close-up: face only, emotional intensity",
+        "medium close-up: head and shoulders",
+        "medium shot: waist up",
+        "dramatic lighting: high contrast shadows",
+        "soft focus: gentle bokeh effect"
+    ],
+    "quality_modifiers": {
+        "DRAFT": "",
+        "STANDARD": ", highly detailed, 4k, professional quality",
+        "HIGH": ", highly detailed, ultra realistic, 8k, photorealistic, professional photography",
+        "PREMIUM": ", masterpiece, ultra detailed, photorealistic, professional photography, 8k uhd, studio lighting, sharp focus"
+    },
+    "camera_settings": {
+        "shot_type": "medium_shot",
+        "angle": {
+            "vertical": "eye_level",
+            "horizontal": "straight_on"
+        },
+        "composition": "rule_of_thirds",
+        "depth_of_field": "character in sharp focus, slightly soft background"
+    },
+    "lighting_presets": {
+        "soft": "soft diffused lighting, gentle shadows, warm tone",
+        "dramatic": "high contrast lighting, strong shadows, cinematic",
+        "golden_hour": "warm golden sunlight, soft shadows, 3500K color temperature",
+        "studio": "professional studio lighting, even illumination, neutral white balance"
+    },
+    "negative_prompt": "blurry, distorted, multiple faces, deformed, low quality, bad anatomy, extra fingers, fused fingers, poorly drawn face, ugly, bad proportions",
+    "default_params": {
+        "cfg_scale": 7.5,
+        "steps": 30,
+        "sampler": "DPM++ 2M Karras",
+        "seed": -1
+    },
+    "tags": [
+        "character",
+        "portrait",
+        "face",
+        "close-up"
+    ],
+    "priority": 10,
+    "usage_notes": "此模板专注于角色一致性，确保面部特征、发型、服装等关键特征在所有镜头中保持一致。使用 DNA Bank 中的 signature features 作为锚点。"
+}

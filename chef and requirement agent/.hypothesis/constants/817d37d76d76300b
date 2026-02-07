@@ -1,0 +1,4 @@
+# file: F:\VScode Files\bohack\multi-agent_video_creating\src\agents\requirement_parser\input_manager.py
+# hypothesis_version: 6.148.8
+
+[500, 1024, 10000, '.', '.aac', '.avi', '.bmp', '.flac', '.gif', '.jpeg', '.jpg', '.m4a', '.mkv', '.mov', '.mp3', '.mp4', '.ogg', '.png', '.wav', '.webm', '.webp', '/', '?', 'Metadata extracted', 'Receiving user input', 'audio', 'audio_count', 'http://', 'https://', 'image', 'image_count', 'images', 'max_files_per_type', 'max_text_length', 's3://', 'text_length', 'timestamp', 'total_files', 'total_size', 'video', 'video_count', 'videos']

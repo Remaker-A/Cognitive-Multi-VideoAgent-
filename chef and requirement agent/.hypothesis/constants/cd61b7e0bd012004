@@ -1,0 +1,4 @@
+# file: F:\VScode Files\bohack\multi-agent_video_creating\src\agents\requirement_parser\event_manager.py
+# hypothesis_version: 6.148.8
+
+['clarification_count', 'component_scores', 'confidence', 'confidence_level', 'confidence_report', 'cost', 'current_value', 'data_keys', 'error_context', 'error_message', 'error_type', 'event_id', 'field_name', 'global_spec', 'latency_ms', 'low_confidence_areas', 'overall_confidence', 'path', 'priority', 'project_id', 'reason', 'recommendation', 'suggestions', 'timestamp', 'written_by']

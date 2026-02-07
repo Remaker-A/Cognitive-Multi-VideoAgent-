@@ -1,0 +1,4 @@
+# file: F:\VScode Files\bohack\multi-agent_video_creating\src\agents\requirement_parser\utils.py
+# hypothesis_version: 6.148.8
+
+[0.0, 0.3, 1.0, 1024.0, 100, '%Y%m%d', '(\\d+)\\s*minutes?', '(\\d+)\\s*seconds?', '(\\d+)\\s*分钟', '(\\d+)\\s*秒', '.', '...', '1080x1080', '1080x1920', '1280x720', '16:9', '1920x1080', '1:1', '720x1280', '720x720', '9:16', 'B', 'GB', 'KB', 'MB', '[\\u4e00-\\u9fff]', '\\s+', 'balanced', 'data', 'en', 'fast', 'high', 'horizontal_oriented', 'minute', 'req', 'step', 'vertical_oriented', 'zh', '分钟']

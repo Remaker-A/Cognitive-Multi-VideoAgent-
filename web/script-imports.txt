@@ -1,0 +1,2 @@
+<script src="shot-editor.js"></script>
+<script src="storyboard-display-helper.js"></script>

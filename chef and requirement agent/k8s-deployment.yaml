@@ -1,0 +1,229 @@
+# RequirementParser Agent Kubernetes 部署配置
+# Requirements: 7.1, 7.2, 7.3
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: requirement-parser
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: requirement-parser-config
+  namespace: requirement-parser
+data:
+  ENVIRONMENT: "production"
+  LOG_LEVEL: "INFO"
+  LOG_FORMAT: "json"
+  REQ_PARSER_AGENT_NAME: "RequirementParserAgent"
+  REQ_PARSER_DEEPSEEK_API_ENDPOINT: "https://www.sophnet.com/api/open-apis/v1/chat/completions"
+  REQ_PARSER_DEEPSEEK_MODEL_NAME: "DeepSeek-V3.2"
+  REQ_PARSER_MAX_RETRIES: "3"
+  REQ_PARSER_TIMEOUT_SECONDS: "30"
+  REQ_PARSER_CONFIDENCE_THRESHOLD: "0.6"
+  REQ_PARSER_DEFAULT_QUALITY_TIER: "balanced"
+  REQ_PARSER_DEFAULT_ASPECT_RATIO: "9:16"
+  REQ_PARSER_DEFAULT_RESOLUTION: "1080x1920"
+  REQ_PARSER_DEFAULT_FPS: "30"
+  REQ_PARSER_MAX_FILE_SIZE_MB: "100"
+  REQ_PARSER_BATCH_SIZE: "10"
+  REQ_PARSER_MAX_CONCURRENT_REQUESTS: "5"
+  REQ_PARSER_EVENT_BUS_URL: "redis://redis-service:6379"
+  REQ_PARSER_BLACKBOARD_URL: "http://blackboard-service:8000"
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: requirement-parser-secrets
+  namespace: requirement-parser
+type: Opaque
+stringData:
+  # 请替换为实际的 API Key
+  REQ_PARSER_DEEPSEEK_API_KEY: "your_deepseek_api_key_here"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: requirement-parser
+  namespace: requirement-parser
+  labels:
+    app: requirement-parser
+    version: v1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: requirement-parser
+  template:
+    metadata:
+      labels:
+        app: requirement-parser
+        version: v1
+    spec:
+      containers:
+      - name: requirement-parser
+        image: requirement-parser:latest
+        imagePullPolicy: IfNotPresent
+        
+        envFrom:
+        - configMapRef:
+            name: requirement-parser-config
+        - secretRef:
+            name: requirement-parser-secrets
+        
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "2000m"
+        
+        livenessProbe:
+          exec:
+            command:
+            - python
+            - -c
+            - "import sys; sys.exit(0)"
+          initialDelaySeconds: 30
+          periodSeconds: 30
+          timeoutSeconds: 10
+          failureThreshold: 3
+        
+        readinessProbe:
+          exec:
+            command:
+            - python
+            - -c
+            - "import sys; sys.exit(0)"
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+      
+      restartPolicy: Always
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+  namespace: requirement-parser
+  labels:
+    app: redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+      - name: redis
+        image: redis:7-alpine
+        command:
+        - redis-server
+        - --appendonly
+        - "yes"
+        
+        ports:
+        - containerPort: 6379
+          name: redis
+        
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        
+        volumeMounts:
+        - name: redis-data
+          mountPath: /data
+        
+        livenessProbe:
+          exec:
+            command:
+            - redis-cli
+            - ping
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        
+        readinessProbe:
+          exec:
+            command:
+            - redis-cli
+            - ping
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 3
+      
+      volumes:
+      - name: redis-data
+        persistentVolumeClaim:
+          claimName: redis-pvc
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-service
+  namespace: requirement-parser
+spec:
+  selector:
+    app: redis
+  ports:
+  - port: 6379
+    targetPort: 6379
+    protocol: TCP
+  type: ClusterIP
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: redis-pvc
+  namespace: requirement-parser
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: requirement-parser-hpa
+  namespace: requirement-parser
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: requirement-parser
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80

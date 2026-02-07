@@ -1,0 +1,4 @@
+# file: F:\VScode Files\bohack\multi-agent_video_creating\src\agents\chef_agent\models.py
+# hypothesis_version: 6.148.8
+
+[0.0, 'BUDGET_ALLOCATED', 'BUDGET_EXCEEDED', 'CONSISTENCY_FAILED', 'COST_OVERRUN_WARNING', 'ERROR_OCCURRED', 'EXCEEDED', 'HUMAN_GATE_TRIGGERED', 'IMAGE_GENERATED', 'MUSIC_COMPOSED', 'OK', 'PROJECT_CREATED', 'PROJECT_DELIVERED', 'PROJECT_FINALIZED', 'STRATEGY_UPDATE', 'USD', 'USER_APPROVED', 'USER_REJECTED', 'VIDEO_GENERATED', 'VOICE_RENDERED', 'WARNING', '上下文信息', '事件 ID', '事件数据', '事件类型', '任务 ID', '元数据', '决策人', '决策时间', '创建时间', '原因', '参数', '发布者', '因果关系 ID', '备注', '完成时间', '已使用预算', '延迟（毫秒）', '总成本', '总预算', '成本', '成本分解', '成本影响（美元）', '操作类型', '时间戳', '是否合规', '是否有效', '用户决策', '视频时长（秒）', '触发原因', '请求 ID', '货币单位', '质量档位', '超支金额', '超时时间（分钟）', '重试次数', '金额', '错误消息', '错误类型', '镜头数量', '项目 ID', '预算合规性', '预算总额', '预计剩余预算', '额外元数据']

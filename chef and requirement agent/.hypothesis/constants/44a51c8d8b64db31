@@ -1,0 +1,4 @@
+# file: F:\VScode Files\bohack\multi-agent_video_creating\src\agents\requirement_parser\logger.py
+# hypothesis_version: 6.148.8
+
+[' | ', 'cost', 'event_id', 'exception', 'latency_ms', 'level', 'logger', 'message', 'project_id', 'requirement_parser', 'step', 'timestamp', 'utf-8']

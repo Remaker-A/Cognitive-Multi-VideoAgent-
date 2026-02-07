@@ -1,0 +1,87 @@
+# RequirementParser Agent Docker Compose 配置
+# Requirements: 7.1, 7.2, 7.3
+
+version: '3.8'
+
+services:
+  requirement-parser:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: requirement-parser-agent
+    restart: unless-stopped
+    
+    # 环境变量配置
+    env_file:
+      - .env
+    
+    # 环境变量（可覆盖 .env 文件）
+    environment:
+      - ENVIRONMENT=production
+      - LOG_LEVEL=INFO
+      - LOG_FORMAT=json
+    
+    # 资源限制
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    
+    # 健康检查
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    # 日志配置
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    
+    # 网络配置
+    networks:
+      - agent-network
+    
+    # 依赖服务
+    depends_on:
+      redis:
+        condition: service_healthy
+  
+  # Redis (Event Bus)
+  redis:
+    image: redis:7-alpine
+    container_name: requirement-parser-redis
+    restart: unless-stopped
+    
+    command: redis-server --appendonly yes
+    
+    volumes:
+      - redis-data:/data
+    
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    
+    networks:
+      - agent-network
+    
+    ports:
+      - "6379:6379"
+
+networks:
+  agent-network:
+    driver: bridge
+
+volumes:
+  redis-data:
+    driver: local

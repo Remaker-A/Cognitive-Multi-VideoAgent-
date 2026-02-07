@@ -1,0 +1,4 @@
+# file: F:\VScode Files\bohack\multi-agent_video_creating\src\agents\requirement_parser\preprocessor.py
+# hypothesis_version: 6.148.8
+
+[30.0, 180.0, 1080, 1920, 44100, '.', '.unknown', '/', '?', 'audio', 'beautiful', 'cheerful', 'happy', 'horrible', 'images', 'joy', 'key_phrases_count', 'language', 'negative', 'neutral', 'painful', 'positive', 'processed', 'sad', 'source_url', 'terrible', 'text', 'text_length', 'tragic', 'unknown', 'videos', 'wonderful', 'word_count', '可怕', '喜悦', '幸福', '开心', '快乐', '恐怖', '悲伤', '悲惨', '欢乐', '温馨', '痛苦', '美好', '难过']

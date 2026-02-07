@@ -1,0 +1,4 @@
+# file: F:\VScode Files\bohack\multi-agent_video_creating\src\agents\requirement_parser\deepseek_client.py
+# hypothesis_version: 6.148.8
+
+[0.0, 0.001, 0.7, 0.8, 1.0, 2.0, 200, 408, 429, 500, 1000, 2000, 'Authorization', 'Content-Type', 'ParseError', 'USD', 'application/json', 'chat.completion', 'choices', 'completion_tokens', 'content', 'created', 'finish_reason', 'id', 'index', 'message', 'model', 'object', 'prompt_tokens', 'role', 'stop', 'system', 'total_tokens', 'usage', 'user']

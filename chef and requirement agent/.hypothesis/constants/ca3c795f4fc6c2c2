@@ -1,0 +1,4 @@
+# file: F:\VScode Files\bohack\multi-agent_video_creating\src\agents\requirement_parser\config.py
+# hypothesis_version: 6.148.8
+
+[0.6, 100, '.env', '1080x1920', '9:16', 'DeepSeek-V3.2', 'ENVIRONMENT', 'PYTEST_CURRENT_TEST', 'REQ_PARSER_', 'aac', 'api_key', 'aspect_ratio', 'avi', 'balanced', 'endpoint', 'env_file', 'env_prefix', 'extra', 'forbid', 'fps', 'jpeg', 'jpg', 'm4a', 'max_retries', 'mkv', 'model_name', 'mov', 'mp3', 'mp4', 'png', 'production', 'quality_tier', 'resolution', 'timeout', 'wav', 'webp']

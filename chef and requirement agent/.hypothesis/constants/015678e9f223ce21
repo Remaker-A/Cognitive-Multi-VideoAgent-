@@ -1,0 +1,4 @@
+# file: F:\VScode Files\bohack\multi-agent_video_creating\src\agents\requirement_parser\agent.py
+# hypothesis_version: 6.148.8
+
+[0.0, 0.001, 0.005, 0.01, 0.3, 0.7, 1000, '#000000', '#FFFFFF', 'USD', 'audio_count', 'causation_id', 'clarify', 'completeness', 'confidence', 'confidence_threshold', 'config', 'error_context', 'error_type', 'escalation_level', 'event_id', 'fallback_error', 'fallback_strategy', 'has_text', 'high', 'human_intervention', 'human_review', 'images_count', 'low_confidence_areas', 'max_retries', 'message', 'natural', 'neutral', 'original_error', 'priority', 'processing_time', 'project_id', 'style_consistency', 'suggested_actions', 'template_based', 'text', 'text_clarity', 'text_length', 'text_only', 'timeout_seconds', 'type', 'user_input_quality', 'user_input_summary', 'videos_count', '视频项目']

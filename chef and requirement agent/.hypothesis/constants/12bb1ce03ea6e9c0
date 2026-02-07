@@ -1,0 +1,4 @@
+# file: F:\VScode Files\bohack\multi-agent_video_creating\src\agents\requirement_parser\metrics_collector.py
+# hypothesis_version: 6.148.8
+
+[0.0, 'api_call', 'api_calls', 'audio_count', 'average_latency_ms', 'component_scores', 'confidence', 'confidence_level', 'cost', 'endpoint', 'error', 'error_message', 'error_type', 'errors', 'images_count', 'input_size', 'input_size_bytes', 'latency_ms', 'model', 'overall_confidence', 'processing', 'processing_stage', 'processing_time_ms', 'project_id', 'recommendation', 'recovery_strategy', 'recovery_success', 'snapshot', 'success', 'success_rate', 'text_length', 'timestamp', 'tokens_used', 'total_api_calls', 'total_cost', 'total_errors', 'videos_count']

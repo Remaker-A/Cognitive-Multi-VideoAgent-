@@ -1,0 +1,133 @@
+{
+    "template_id": "environment_establishing",
+    "name": "环境展示",
+    "category": "ESTABLISHING",
+    "description": "用于建立场景和展示环境的模板",
+    "base_prompt": "{location_type}, {space_layout}, {key_objects}, {background_elements}, {time_of_day}, {weather}, {lighting}, {color_palette}, {atmosphere}, {style}",
+    "variables": [
+        {
+            "name": "location_type",
+            "type": "string",
+            "required": true,
+            "description": "场景类型",
+            "example": "outdoor rooftop, indoor classroom, city street"
+        },
+        {
+            "name": "space_layout",
+            "type": "string",
+            "required": true,
+            "description": "空间布局",
+            "example": "medium-sized rectangular rooftop, chain-link fence around perimeter"
+        },
+        {
+            "name": "key_objects",
+            "type": "string",
+            "required": true,
+            "description": "关键物体",
+            "example": "rusty chain-link fence, old wooden bench, potted plants, air conditioning units"
+        },
+        {
+            "name": "background_elements",
+            "type": "string",
+            "required": true,
+            "description": "背景元素",
+            "example": "city skyline visible beyond fence, distant mountains"
+        },
+        {
+            "name": "time_of_day",
+            "type": "string",
+            "required": true,
+            "description": "时间",
+            "example": "late afternoon, golden hour around 4-5 PM"
+        },
+        {
+            "name": "weather",
+            "type": "string",
+            "required": true,
+            "description": "天气",
+            "example": "clear sunny day, partly cloudy sky with fluffy white clouds"
+        },
+        {
+            "name": "lighting",
+            "type": "string",
+            "required": true,
+            "description": "光线",
+            "example": "warm golden sunlight from west, soft diffused lighting, long shadows"
+        },
+        {
+            "name": "color_palette",
+            "type": "string",
+            "required": false,
+            "default": "natural colors",
+            "description": "色彩调色板",
+            "example": "warm golden yellow, soft blue sky, red-brown rust, green plants"
+        },
+        {
+            "name": "atmosphere",
+            "type": "string",
+            "required": false,
+            "default": "peaceful",
+            "description": "环境氛围",
+            "example": "warm, nostalgic, peaceful, gentle breeze"
+        },
+        {
+            "name": "style",
+            "type": "string",
+            "required": false,
+            "default": "anime, Studio Ghibli inspired",
+            "description": "艺术风格"
+        }
+    ],
+    "variations": [
+        "extreme long shot: vast environment, small scale",
+        "long shot: establishing context, show full scene",
+        "slow pan: reveal environment gradually",
+        "aerial view: bird's eye perspective",
+        "wide angle: emphasize space and depth"
+    ],
+    "quality_modifiers": {
+        "DRAFT": ", detailed environment",
+        "STANDARD": ", highly detailed environment, 4k, atmospheric",
+        "HIGH": ", highly detailed environment, ultra realistic, 8k, atmospheric, professional photography",
+        "PREMIUM": ", masterpiece, ultra detailed environment, 8k uhd, atmospheric, professional photography, cinematic composition"
+    },
+    "camera_settings": {
+        "shot_type": "long_shot",
+        "angle": {
+            "vertical": "eye_level",
+            "horizontal": "straight_on"
+        },
+        "movement": {
+            "type": "slow_pan",
+            "speed": "very slow and smooth"
+        },
+        "composition": "golden_ratio, emphasize depth"
+    },
+    "lighting_presets": {
+        "golden_hour": "warm golden sunlight, soft shadows, 3500K color temperature, magical atmosphere",
+        "overcast": "soft diffused light, minimal shadows, even illumination, muted colors",
+        "night": "artificial lights, deep shadows, high contrast, cool blue tones",
+        "sunrise": "warm orange light, long shadows, fresh atmosphere, cool to warm gradient"
+    },
+    "season_indicators": {
+        "spring": "cherry blossom petals, fresh green leaves, comfortable temperature",
+        "summer": "bright sunlight, lush vegetation, heat haze",
+        "autumn": "falling leaves, warm colors, crisp air",
+        "winter": "bare trees, cold atmosphere, possible snow"
+    },
+    "negative_prompt": "cluttered, messy, low quality, poor composition, unbalanced, distorted perspective, unrealistic lighting",
+    "default_params": {
+        "cfg_scale": 7.5,
+        "steps": 30,
+        "sampler": "DPM++ 2M Karras",
+        "seed": -1
+    },
+    "tags": [
+        "environment",
+        "establishing",
+        "landscape",
+        "atmosphere"
+    ],
+    "priority": 7,
+    "usage_notes": "此模板专注于环境氛围和场景建立。使用详细的空间描述和光线信息。适合用于场景开场和环境转换。"
+}

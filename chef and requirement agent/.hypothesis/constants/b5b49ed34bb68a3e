@@ -1,0 +1,4 @@
+# file: F:\VScode Files\bohack\multi-agent_video_creating\src\agents\requirement_parser\models.py
+# hypothesis_version: 6.148.8
+
+[0.6, 0.7, 0.8, 2000, 'DeepSeek-V3.2', 'DeepSeekResponse', 'ERROR_OCCURRED', 'HUMAN_GATE_TRIGGERED', 'PROJECT_CREATED', 'USD', 'actor', 'amount', 'aspect_ratio', 'balanced', 'causation_id', 'characters', 'chat.completion', 'choices', 'completed', 'completion_tokens', 'content', 'cost', 'created', 'currency', 'cut', 'duration', 'event_id', 'event_type', 'failed', 'finish_reason', 'fps', 'high', 'id', 'in_progress', 'index', 'latency_ms', 'linear', 'low', 'max_tokens', 'medium', 'message', 'messages', 'metadata', 'model', 'mood', 'natural', 'neutral', 'object', 'palette', 'payload', 'pending', 'proceed', 'project_id', 'prompt_tokens', 'quality_tier', 'realistic', 'resolution', 'role', 'static', 'stop', 'style', 'temperature', 'timestamp', 'title', 'tone', 'total_tokens', 'usage', 'user_options', 'visual_dna_version']

@@ -1,0 +1,4 @@
+# file: F:\VScode Files\bohack\multi-agent_video_creating\src\agents\requirement_parser\confidence_evaluator.py
+# hypothesis_version: 6.148.8
+
+[0.0, 0.1, 0.15, 0.2, 0.25, 0.3, 0.4, 0.5, 1.0, '16:9', '1:1', '4:3', '9:16', 'balanced', 'characters', 'clarify', 'completeness', 'component_scores', 'confidence', 'confidence_level', 'energy', 'fast', 'high', 'human_review', 'low', 'medium', 'mood', 'overall_confidence', 'pace', 'proceed', 'reason', 'recommendation', 'style', 'style_consistency', 'suggestions', 'tempo', 'text_clarity', 'text_description', 'title', 'user_input', 'user_input_quality', 'value', 'x', '上传参考图片、视频或音频', '情绪信息缺失', '指定艺术风格（如：写实、卡通、复古等）', '描述期望的色调和氛围', '描述期望的视觉风格和情绪', '描述角色的外观和特征', '提供参考图片以明确视觉风格', '提供参考音乐以明确情绪基调', '提供文本描述说明需求', '文本描述不够清晰', '文本描述过于简短或缺失，无法充分理解需求', '无法确定明确的视觉风格', '明确说明视频中的角色', '未能确定视频的整体情绪', '未能识别出角色信息', '用户输入信息不足', '角色信息缺失', '说明具体的使用场景和目标', '说明视频的主要内容和目标', '说明角色之间的关系', '请提供更详细的场景描述', '风格信息不一致或不完整']

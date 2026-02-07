@@ -1,0 +1,4 @@
+# file: F:\VScode Files\bohack\multi-agent_video_creating\src\agents\requirement_parser\global_spec_generator.py
+# hypothesis_version: 6.148.8
+
+[600, '#', '#000000', '#0000FF', '#00FF00', '#800080', '#808080', '#A52A2A', '#FF0000', '#FFA500', '#FFC0CB', '#FFFF00', '#FFFFFF', ',', '...', '16:9', '1:1', '4:3', '9:16', 'aspect_ratio', 'balanced', 'black', 'blue', 'bright', 'brown', 'calm', 'characters', 'characters_count', 'dark', 'default_config', 'duration', 'dynamic', 'energetic', 'fast', 'fps', 'gray', 'green', 'happy', 'high', 'horizontal', 'horizontal_oriented', 'low', 'moody', 'mysterious', 'natural', 'neutral', 'orange', 'palette', 'palette_size', 'pink', 'purple', 'quality_tier', 'red', 'sad', 'soft', 'title', 'tone', 'vertical', 'vertical_oriented', 'vibrant', 'visual_dna_version', 'white', 'yellow', '视频项目']
