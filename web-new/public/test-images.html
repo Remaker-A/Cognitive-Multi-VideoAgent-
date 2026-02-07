@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片加载测试</title>
+    <style>
+        body {
+            background: #1e293b;
+            color: white;
+            font-family: sans-serif;
+            padding: 20px;
+        }
+        .image-test {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        .image-test img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border: 2px solid #64748b;
+            border-radius: 8px;
+        }
+        .image-test p {
+            margin-top: 8px;
+            font-size: 14px;
+        }
+        .error {
+            color: #ef4444;
+        }
+        .success {
+            color: #10b981;
+        }
+    </style>
+</head>
+<body>
+    <h1>视觉风格图片加载测试</h1>
+
+    <div class="image-test">
+        <img src="/images/styles/classical.jpg" alt="古典主义"
+             onload="this.nextElementSibling.className='success'"
+             onerror="this.nextElementSibling.className='error'">
+        <p class="">古典主义 (classical.jpg)</p>
+    </div>
+
+    <div class="image-test">
+        <img src="/images/styles/pixel.jpg" alt="像素风"
+             onload="this.nextElementSibling.className='success'"
+             onerror="this.nextElementSibling.className='error'">
+        <p class="">像素风 (pixel.jpg)</p>
+    </div>
+
+    <div class="image-test">
+        <img src="/images/styles/3d-cartoon.jpg" alt="3D卡通"
+             onload="this.nextElementSibling.className='success'"
+             onerror="this.nextElementSibling.className='error'">
+        <p class="">3D卡通 (3d-cartoon.jpg) - 对照组</p>
+    </div>
+
+    <div class="image-test">
+        <img src="/images/styles/cinematic.png" alt="电影感"
+             onload="this.nextElementSibling.className='success'"
+             onerror="this.nextElementSibling.className='error'">
+        <p class="">电影感 (cinematic.png) - 对照组</p>
+    </div>
+
+    <script>
+        // 检查所有图片加载状态
+        setTimeout(() => {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                console.log(`${img.alt}: ${img.complete && img.naturalHeight !== 0 ? '✅ 加载成功' : '❌ 加载失败'}`);
+            });
+        }, 2000);
+    </script>
+</body>
+</html>

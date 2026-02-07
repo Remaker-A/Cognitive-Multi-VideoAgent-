@@ -1,0 +1,110 @@
+{
+    "template_id": "action_scene",
+    "name": "动作场景",
+    "category": "ACTION",
+    "description": "用于动作和运动镜头的模板",
+    "base_prompt": "{character_signature}, {character_full}, {action_primary}, {action_secondary}, {environment}, {camera_movement}, {mood} atmosphere, {style}",
+    "variables": [
+        {
+            "name": "character_signature",
+            "type": "string",
+            "required": true,
+            "description": "角色标志性特征"
+        },
+        {
+            "name": "character_full",
+            "type": "string",
+            "required": true,
+            "description": "角色完整外观（全身）"
+        },
+        {
+            "name": "action_primary",
+            "type": "string",
+            "required": true,
+            "description": "主要动作",
+            "example": "walking forward slowly, taking measured steps"
+        },
+        {
+            "name": "action_secondary",
+            "type": "string",
+            "required": false,
+            "default": "",
+            "description": "次要动作和微表情",
+            "example": "right hand brushing hair behind ear, soft smile forming"
+        },
+        {
+            "name": "environment",
+            "type": "string",
+            "required": true,
+            "description": "环境描述",
+            "example": "school rooftop with chain-link fence, city skyline in background"
+        },
+        {
+            "name": "camera_movement",
+            "type": "string",
+            "required": false,
+            "default": "static camera",
+            "description": "镜头运动",
+            "example": "slow pan right following character, smooth tracking shot"
+        },
+        {
+            "name": "mood",
+            "type": "string",
+            "required": false,
+            "default": "dynamic",
+            "description": "氛围情绪"
+        },
+        {
+            "name": "style",
+            "type": "string",
+            "required": false,
+            "default": "cinematic",
+            "description": "艺术风格"
+        }
+    ],
+    "variations": [
+        "full shot: entire body visible, show movement clearly",
+        "tracking shot: camera follows character smoothly",
+        "dynamic angles: low angle for power, high angle for vulnerability",
+        "motion blur: slight blur for speed sense",
+        "wide shot: show environment context"
+    ],
+    "quality_modifiers": {
+        "DRAFT": ", fluid motion",
+        "STANDARD": ", fluid motion, highly detailed, 4k, smooth animation",
+        "HIGH": ", fluid motion, ultra realistic, 8k, smooth animation, professional cinematography",
+        "PREMIUM": ", masterpiece, fluid motion, ultra detailed, 8k uhd, smooth animation, professional cinematography, motion capture quality"
+    },
+    "camera_settings": {
+        "shot_type": "full_shot",
+        "angle": {
+            "vertical": "eye_level",
+            "horizontal": "three_quarter"
+        },
+        "movement": {
+            "type": "tracking",
+            "speed": "smooth and gradual"
+        },
+        "composition": "rule_of_thirds with leading room"
+    },
+    "lighting_presets": {
+        "dynamic": "dynamic lighting with moving shadows, high contrast",
+        "natural": "natural outdoor lighting, realistic shadows",
+        "dramatic": "dramatic lighting emphasizing movement, strong directional light"
+    },
+    "negative_prompt": "static, boring, low quality, unrealistic motion, choppy animation, frozen pose, stiff movement, unnatural physics",
+    "default_params": {
+        "cfg_scale": 7.0,
+        "steps": 35,
+        "sampler": "DPM++ 2M Karras",
+        "seed": -1
+    },
+    "tags": [
+        "action",
+        "movement",
+        "dynamic",
+        "full-body"
+    ],
+    "priority": 8,
+    "usage_notes": "此模板专注于动作流畅性和运动表现。确保动作描述清晰，包含起始和结束状态以保持连续性。使用 tracking shot 跟随角色运动。"
+}
